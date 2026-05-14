@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Scraper Settings</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup options">
+    <header class="header">
+      <h1>⚙️ Settings</h1>
+    </header>
+
+    <main class="content">
+      <!-- API Configuration -->
+      <section class="settings-section">
+        <h2>API Configuration</h2>
+
+        <div class="form-group">
+          <label>API Endpoint</label>
+          <input type="text" id="apiEndpoint" placeholder="https://api.yourscraper.com">
+          <span class="hint">Leave empty for local-only mode</span>
+        </div>
+
+        <div class="form-group">
+          <label>API Key</label>
+          <input type="password" id="apiKey" placeholder="Your API key">
+        </div>
+
+        <button class="btn" id="testConnectionBtn">Test Connection</button>
+      </section>
+
+      <!-- Default Settings -->
+      <section class="settings-section">
+        <h2>Default Settings</h2>
+
+        <div class="form-group">
+          <label>Default Mode</label>
+          <select id="defaultMode">
+            <option value="auto">Auto</option>
+            <option value="parallel">Parallel</option>
+            <option value="api">API Discovery</option>
+            <option value="ai">AI Assist</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="autoSave">
+            Auto-save to cloud
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="showNotifications">
+            Show notifications
+          </label>
+        </div>
+      </section>
+
+      <!-- Selectors -->
+      <section class="settings-section">
+        <h2>Default Selectors</h2>
+
+        <div class="form-group">
+          <label>Title Selector</label>
+          <input type="text" id="titleSelector" placeholder="h1, .title">
+        </div>
+
+        <div class="form-group">
+          <label>Price Selector</label>
+          <input type="text" id="priceSelector" placeholder=".price, [class*='cost']">
+        </div>
+
+        <div class="form-group">
+          <label>Description Selector</label>
+          <input type="text" id="descSelector" placeholder=".desc, p">
+        </div>
+
+        <button class="btn" id="resetSelectorsBtn">Reset to Defaults</button>
+      </section>
+
+      <!-- Keyboard Shortcuts -->
+      <section class="settings-section">
+        <h2>Keyboard Shortcuts</h2>
+
+        <div class="shortcut-list">
+          <div class="shortcut">
+            <span>Start Selection</span>
+            <kbd>S</kbd>
+          </div>
+          <div class="shortcut">
+            <span>Scrape Page</span>
+            <kbd>Ctrl+Shift+S</kbd>
+          </div>
+          <div class="shortcut">
+            <span>Copy Results</span>
+            <kbd>Ctrl+Shift+C</kbd>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="settings-section">
+        <h2>About</h2>
+        <p class="version">Ultimate Scraper v1.0.0</p>
+        <p>Self-learning, AI-powered web scraping.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button class="btn primary" id="saveBtn">Save Settings</button>
+    </footer>
+  </div>
+
+  <script src="scripts/options.js"></script>
+</body>
+</html>

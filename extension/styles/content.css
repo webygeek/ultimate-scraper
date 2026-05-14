@@ -1,0 +1,12 @@
+/* Content script styles - for highlighting selected elements */
+
+[data-ultimate-scraper-highlight] {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+  cursor: pointer !important;
+}
+
+[data-ultimate-scraper-selected] {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}

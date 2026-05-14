@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Scraper</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <h1>🕷️ Ultimate Scraper</h1>
+    </header>
+
+    <main class="content">
+      <!-- Tab Navigation -->
+      <div class="tabs">
+        <button class="tab active" data-tab="scrape">Scrape</button>
+        <button class="tab" data-tab="select">Select</button>
+        <button class="tab" data-tab="history">History</button>
+      </div>
+
+      <!-- Scrape Tab -->
+      <div class="tab-content active" id="scrape">
+        <div class="form-group">
+          <label>URL</label>
+          <input type="text" id="url" placeholder="https://example.com" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>Mode</label>
+          <select id="mode">
+            <option value="auto">Auto (Best)</option>
+            <option value="parallel">Parallel</option>
+            <option value="api">API Discovery</option>
+            <option value="ai">AI Assist</option>
+            <option value="incremental">Incremental</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Selectors (optional)</label>
+          <textarea id="selectors" rows="3" placeholder='{"title": "h1", "price": ".price"}'></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="scrapeBtn">🔍 Scrape Page</button>
+          <button class="btn" id="scrapeAllBtn">🌐 Scrape All</button>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+          <h3>Results</h3>
+          <div class="results-count"></div>
+          <div class="results-preview"></div>
+          <div class="result-actions">
+            <button class="btn small" id="copyBtn">📋 Copy</button>
+            <button class="btn small" id="downloadBtn">💾 Download</button>
+            <button class="btn small" id="cloudBtn">☁️ Save to Cloud</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select Tab -->
+      <div class="tab-content" id="select">
+        <p class="info">Click on elements to select them for scraping.</p>
+
+        <button class="btn primary full-width" id="selectModeBtn">
+          👆 Start Selection
+        </button>
+
+        <div class="selected-elements" id="selectedElements" style="display: none;">
+          <h3>Selected Elements</h3>
+          <div class="elements-list"></div>
+        </div>
+
+        <div class="selector-preview" id="selectorPreview" style="display: none;">
+          <label>Generated Selector</label>
+          <code id="generatedSelector"></code>
+          <button class="btn small" id="useSelectorBtn">Use This Selector</button>
+        </div>
+      </div>
+
+      <!-- History Tab -->
+      <div class="tab-content" id="history">
+        <div class="history-list" id="historyList">
+          <p class="empty-state">No recent scrapes</p>
+        </div>
+        <button class="btn small" id="clearHistoryBtn">Clear History</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <a href="options.html" target="_blank">⚙️ Settings</a>
+    </footer>
+  </div>
+
+  <script src="scripts/popup.js"></script>
+</body>
+</html>

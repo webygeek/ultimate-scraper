@@ -26,6 +26,32 @@ curl http://localhost:3002/
 
 ---
 
+## Using Firecrawl from Any Project
+
+Firecrawl runs at `localhost:3002` - accessible from any project:
+
+```bash
+# 1. Start Firecrawl ONCE (stays running)
+cd docker && docker-compose up -d
+
+# 2. From ANY project, use it:
+pip install requests
+
+python -c "
+import requests
+resp = requests.post('http://localhost:3002/v1/scrape', 
+    json={'url': 'https://example.com', 'formats': ['markdown']})
+print(resp.json()['data']['markdown'])
+"
+
+# 3. Or copy firecrawl_client.py to your project:
+cp scraper/integrations/firecrawl_client.py your-project/
+```
+
+**Firecrawl runs in background at localhost:3002 - use from any project!**
+
+---
+
 ## Quick Start
 
 ```bash
